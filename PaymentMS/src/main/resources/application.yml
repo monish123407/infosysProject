@@ -1,0 +1,11 @@
+resilience4j:
+ circuitbreaker:
+  instances:
+    paymentService:
+      slidingWindowType: COUNT_BASED
+      slidingWindowSize: 3
+      failureRateThreshold: 100
+      ringBufferSizeInClosedState: 3
+      minimumNumberOfCalls: 3
+      waitDurationInOpenState: 60s
+      automaticTransitionFromOpenToHalfOpenEnabled: true
